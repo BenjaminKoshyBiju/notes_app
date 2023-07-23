@@ -1,0 +1,13 @@
+<form method="POST" action="/">
+    {% csrf_token %}
+    <textarea name="body"></textarea>
+    <input type="submit" value="add note"/>
+</form>
+
+<div>
+    {% for note in notes %}
+    <div>
+        <a href="{% url 'notes' noteid.id %}">{{note.desc}}</a>
+    </div>
+    {% endfor %}
+</div>
