@@ -3,19 +3,18 @@ from django.views import View
 from .models import note
 
 # Create your views here.
+
 class index(View):
-    def get(self,request,notes_id):
-        noteid = note.objects.get(id=notes_id)
+    
+    def get(self,request):
         notes=note.objects.all()
-        context = {
-           'noteid':noteid,
-           'notes':notes
-              }
-        return render(request,"index.html",context)
+        
+        
+        return render(request,"index.html",{'texts':notes})
     
     def post(self,request):
         notes=note.objects.create(
-            body=request.POST.get('body')
+            desc=request.POST.get('body')
         )
         notes.save()
         return redirect('notes')

@@ -5,9 +5,9 @@
 </form>
 
 <div>
-    {% for note in notes %}
+    {% for note in texts %}
     <div>
-        <a href="{% url 'notes' noteid.id %}">{{note.desc}}</a>
+        <a href="{% url 'notes' %}">{{note.desc}}</a>
     </div>
     {% endfor %}
 </div>
