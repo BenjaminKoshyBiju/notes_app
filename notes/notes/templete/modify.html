@@ -1,0 +1,22 @@
+
+<form method="POST" action="">
+
+    {% csrf_token %}
+    <textarea name="body"></textarea>
+    <input type="submit" name="form" value="Modify note"/>
+</form>
+
+<div>
+   
+    <div>
+        <a href="{% url 'notes' %}">{{text}}</a>
+    </div>
+
+    <form method="POST">
+        {% csrf_token %}
+        
+        <input type="submit" name="form2" value="Delete note"/>
+    </form>
+    
+    
+</div>
